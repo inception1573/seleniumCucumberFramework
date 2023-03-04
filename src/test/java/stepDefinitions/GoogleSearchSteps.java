@@ -9,6 +9,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -22,7 +23,9 @@ public class GoogleSearchSteps {
     @Given("Open chrome browser")
     public void open_chrome_browser() {
         WebDriverManager.getInstance(DriverManagerType.CHROME).setup();
-        driver=new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("headless");
+        driver=new ChromeDriver(options);
     }
     @When("Go google search")
     public void go_google_search() {
