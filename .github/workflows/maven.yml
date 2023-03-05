@@ -7,7 +7,7 @@
 # documentation.
 
 name: Java CI with Maven
-
+permissions: read-all
 on:
   push:
     branches: [ "master" ]
